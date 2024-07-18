@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
   let counter = 0;
 
   const [counter2, setCounter2] = useState(0);
+  const [value, setValue] = useState(0);
   // counter2: 초기값이 담긴 state
   // setCounter2: state 값을 변경해주는 함수
   // 0: 초기값
@@ -12,6 +13,7 @@ function App() {
   const increase = () => {
     counter = counter + 1;
     setCounter2(counter2 + 1);
+    setValue(value + 2);
     console.log("variable: " + counter + ", state: " + counter2);
   }
 
@@ -29,8 +31,21 @@ function App() {
   // 일반변수: 리렌더링되면서 값이 초기화된다.
   // state: 비동기적으로 처리된다.
 
+  useEffect(() => {
+    console.log("useEffect1 Fire");
+  }, []);
+
+  useEffect(() => {
+    console.log("useEffect2 Fire: " + counter2);
+  }, [counter2]);
+
+  useEffect(() => {
+    console.log("useEffect3 Fire: " + value);
+  }, [value]);
+
   return (
     <div>
+      {console.log("render")}
       <div>{counter}</div>
       <div>state: {counter2}</div>
       <button onClick={increase}>Click</button>
