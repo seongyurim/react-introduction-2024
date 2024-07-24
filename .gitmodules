@@ -1,6 +1,6 @@
 [submodule "rock-paper-scissor"]
    path = rock-paper-scissor
-   url = https://github.com/seongyurim/rock-paper-scissors-2024.git
+	url = https://github.com/seongyurim/rock-paper-scissors-2024.git
 
 [submodule "weather-app"]
    path = weather-app
