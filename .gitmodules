@@ -5,3 +5,7 @@
 [submodule "weather-app"]
    path = weather-app
    url = https://github.com/seongyurim/weather-app-2024.git
+
+[submodule "shopping-router"]
+   path = shopping-router
+   url = https://github.com/seongyurim/shopping-router-2024.git
