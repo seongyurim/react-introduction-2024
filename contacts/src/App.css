@@ -1,0 +1,29 @@
+/* Hide Number Spin Button at Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.row-gap {
+  padding: 0 10px;
+}
+
+.form-area,
+.list-area {
+  border: 1px solid #dddddd;
+  padding: 2rem;
+}
+
+.btns {
+  width: 100%;
+}
+
+.total-count {
+  margin: 0.7rem 0;
+}
