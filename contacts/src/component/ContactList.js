@@ -4,24 +4,13 @@ import SearchBox from './SearchBox';
 import { useSelector } from 'react-redux';
 
 const ContactList = () => {
-  const { contactList, keyword } = useSelector(state => state);
-  let [filteredList, setFilteredList] = useState([]);
-
-  useEffect(() => {
-    if (keyword !== "") {
-      let list = contactList.filter((item) => item.name.includes(keyword));
-      setFilteredList(list);
-    }
-    else {
-      setFilteredList(contactList);
-    }
-  }, [keyword, contactList]);
+  const filteredList = useSelector(state => state.filteredList);
 
   return (
     <div>
       <SearchBox />
-      <div className="total-count">total: {filteredList.length}</div>
-      {filteredList.map(item => <ContactItem item={item}/>)}
+      <div className="total-count">현재 연락처의 인원은 <strong>{filteredList.length}</strong>명입니다.</div>
+      {filteredList.map((item, index) => <ContactItem item={item} key={index}/>)}
     </div>
   )
 };
