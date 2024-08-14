@@ -13,6 +13,10 @@ function App() {
     dispatch({type:"INCREMENT", payload:{num: 5}});
   }
 
+  const decrease = () => {
+    dispatch({type:"DECREMENT", payload:{num: 2}});
+  }
+
   const login = () => {
     dispatch({type:"LOGIN", payload:{id:"tester", password:"1234"}});
   }
@@ -20,11 +24,12 @@ function App() {
   return (
     <div>
       <h1>{count}</h1>
-      <h1>아이디: {id}, 패스워드: {pw}</h1>
-      <button onClick={increase}>Click</button>
+      <button onClick={increase}>5씩 증가</button><p/>
+      <button onClick={decrease}>2씩 감소</button><p/>
       <Box />
       <GrandSonBox />
-      <button onClick={login}>Login</button>
+      <h1>아이디: {id}, 패스워드: {pw}</h1>
+      <button onClick={login}>로그인</button><br/>
     </div>
   );
 }
