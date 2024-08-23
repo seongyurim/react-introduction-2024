@@ -9,13 +9,13 @@ function App() {
     <div style={{textAlign: "center", lineHeight: "1.5"}}>
       <nav style={{backgroundColor: "beige", padding: "20px"}}>
         <Link to="/" style={{marginRight: "10px"}}>
-          HomePage
+          Home Page
         </Link>
         <Link to="/second" style={{marginRight: "10px"}}>
-          SecondPage
+          Second Page
         </Link>
         <Link to="/manual">
-          MaunalFetch
+          Maunal Fetch
         </Link>
       </nav>
       <Routes>
