@@ -1,0 +1,59 @@
+.banner-container {
+  overflow-x: hidden;
+}
+
+.banner-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+}
+
+.banner-wrapper:before {
+  content: '';
+  background: linear-gradient(to top, black, transparent);
+  position: absolute;
+  left: 0;
+  height: inherit;
+  width: inherit;
+}
+
+.item-info-area {
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+  line-height: 1.8;
+}
+
+.item-title {
+  width: 50%;
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: -.2rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.item-desc {
+  width: 40%;
+  word-break: keep-all;
+}
+
+.preview-btn {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: .375rem;
+  margin-top: 1.5rem;
+  transition: background-color .4s;
+}
+
+.preview-btn:hover {
+  background-color: #a7a7a7;
+}
+
+.preview-btn-icon {
+  margin-right: 10px;
+}
