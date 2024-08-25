@@ -11,6 +11,11 @@ const Banner = () => {
   const mainItem = data?.results[randomIndex];
   const posterUrl = `https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${mainItem?.poster_path}`;
 
+  if (isError) {
+    console.log("message:", error.message);
+
+  }
+  
   useEffect(() => {
     if (data && data.results) {
       const newIndex = Math.floor(Math.random() * data?.results?.length); // 0~19 사이의 난수 생성
