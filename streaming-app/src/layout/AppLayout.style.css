@@ -11,8 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 10%, transparent);
+  padding: 1.5rem 4rem;
+  background-image: linear-gradient(to bottom, rgba(20, 20, 20, .8) 10%, transparent);
 }
 
 .nav-left-area {

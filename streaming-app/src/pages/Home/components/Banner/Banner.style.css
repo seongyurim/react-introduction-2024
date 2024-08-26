@@ -4,13 +4,13 @@
 
 .banner-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
   background-position: center;
 }
 
 .banner-wrapper:before {
   content: '';
-  background: linear-gradient(to top, black, transparent);
+  background: linear-gradient(to top, #141414, transparent);
   position: absolute;
   left: 0;
   height: inherit;
@@ -19,23 +19,37 @@
 
 .item-info-area {
   position: absolute;
-  left: 5%;
-  bottom: 15%;
-  line-height: 1.8;
+  width: 50vw;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1.6;
+  padding-left: 4rem;
 }
 
 .item-title {
-  width: 50%;
   font-size: 5rem;
-  font-weight: 400;
-  letter-spacing: -.2rem;
+  font-weight: 700;
+  letter-spacing: -.1rem;
   line-height: 1.1;
   margin-bottom: 1rem;
 }
 
 .item-desc {
-  width: 40%;
-  word-break: keep-all;
+  width: 60%;
+}
+
+.read-more-btn {
+  font-size: .9rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #a5a5a5;
+  transition: all .3s;
+}
+
+.read-more-btn:hover {
+  color: #535353;
 }
 
 .preview-btn {

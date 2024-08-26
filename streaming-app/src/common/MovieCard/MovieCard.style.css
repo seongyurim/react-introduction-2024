@@ -1,0 +1,100 @@
+.movie-card-container {
+  width: 220px;
+  height: 330px;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: .375rem;
+  /* margin-right: 2rem; */
+  position: relative;
+  overflow: visible;
+  transform: translateY(0) scale(1);
+  transition: all .4s ease .4s;
+}
+
+.movie-card-container:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+}
+
+.card-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, .85);
+  opacity: 0;
+  transition: all .4s ease .4s;
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card-container:hover .card-overlay {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.movie-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: .8rem;
+  line-height: 1.2;
+}
+
+.movie-vote-average,
+.movie-popularity {
+  display: flex;
+  align-items: center;
+}
+
+.movie-popularity {
+  margin-top: 8px;
+}
+
+.star-icon,
+.heart-icon {
+  font-size: .85rem;
+  vertical-align: center;
+  color: rgb(247, 221, 75);
+  margin-right: 6px;
+}
+
+.heart-icon {
+  color: rgb(252, 69, 63);
+}
+
+.star-score {
+  font-size: .85rem;
+  margin-left: 3px;
+  line-height: 1;
+}
+
+.card-overlay-bottom {
+  line-height: 1.5;
+}
+
+.movie-release-year {
+  display: inline-block;
+  border-radius: .2rem;
+  padding: 5px 7px 4px 7px;
+  margin-bottom: .8rem;
+  font-weight: inherit;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.movie-genre {
+  display: inline-block;
+}
+
+.movie-genre + .movie-genre::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: rgb(167, 167, 167);
+  border-radius: 50%;
+  margin: 3px 7px;
+}
