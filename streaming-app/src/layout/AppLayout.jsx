@@ -1,25 +1,41 @@
 import '../reset.css';
 import './AppLayout.style.css';
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 
-const AppLayout = () => {
-  const navList = [
-    { name: '홈', path: '/' },
-    { name: '영화', path: '/movies'},
-    { name: '디테일', path: '/movies/:id'},
-  ]
+const navList = [
+  { name: '홈', path: '/' },
+  { name: '영화', path: '/movies'},
+  { name: '디테일', path: '/movies/:id'},
+]
 
+const AppLayout = () => {
+  const [keyword, setKeyword] = useState('');
   const [isActive, setIsActive] = useState(false);
   const refInput = useRef(null); // input이 나타나는 즉시 focus 주기
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isActive && refInput.current) {
       refInput.current.focus();
     }
   }, [isActive]);
+
+  const handleSubmit = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searchByKeyword();
+    }
+  }
+
+  const searchByKeyword = () => {
+    // URL에 키워드 반영하기
+    navigate(`/movies?q=${keyword}`);
+    setKeyword('');
+    setIsActive(false);
+  }
 
   return (
     <div className='navigation'>
@@ -51,6 +67,9 @@ const AppLayout = () => {
                 type='text'
                 className='search-input'
                 placeholder='제목, 사람, 장르'
+                value={keyword}
+                onChange={(event) => setKeyword(event.target.value)}
+                onKeyDown={handleSubmit}
                 ref={refInput}
                 onBlur={() => setIsActive(false)}
               />

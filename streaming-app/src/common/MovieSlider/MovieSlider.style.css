@@ -1,5 +1,6 @@
+/* 1st: 타이틀 포함 */
 .movie-slide-container {
-  margin: 3rem 0 4rem 4rem;
+  margin: 4rem;
   letter-spacing: -.006rem;
 }
 
@@ -8,17 +9,45 @@
   font-weight: 500;
 }
 
+/* 2nd: 타이틀 아래 */
 .carousel-container {
-  height: 380px;
+  padding-top: 20px;
+  height: 400px;
   overflow-x: hidden;
   overflow-y: visible;
 }
 
-.carousel-item-padding-40-px {
-  width: 100% !important;
-  margin-right: 1rem;
+/* 3rd: 카드 묶음 */
+.slider-class {
+  height: 95%;
 }
 
-.carousel-item-padding-40-px:hover {
-  z-index: 10;
+/* 4th: 개별 카드 */
+.item-class {
+  padding-right: .5rem;
+  box-sizing: border-box;
+}
+
+
+
+/* 커스텀 닷 리스트 */
+.custom-dot-list-style {
+  height: 20px;
+  right: .7rem;
+  top: -10px;
+  justify-content: end;
+  z-index: 2;
+}
+
+.custom-dot-list-style > li > button {
+  background-color: #4d4d4d;
+  width: 14px;
+  height: 2px;
+  margin: 0 0 0 3px;
+  border: none;
+  border-radius: 0;
+}
+
+.custom-dot-list-style > .react-multi-carousel-dot--active > button {
+  background-color: #aaa;
 }

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
 import './MovieCard.style.css';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, className = '' }) => {
   const posterUrl = `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`;
   const { data:genreData } = useMovieGenreQuery();
   // console.log("genre:", genreData);
@@ -31,7 +31,7 @@ const MovieCard = ({ movie }) => {
   return (
     <div
       style={{backgroundImage: `url(${posterUrl})`}}
-      className='movie-card-container'
+      className={`movie-card-container ${className}`}
     >
       <div className='card-overlay'>
         <div className='card-overlay-top'>

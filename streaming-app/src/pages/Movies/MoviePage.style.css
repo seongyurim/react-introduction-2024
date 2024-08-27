@@ -1,0 +1,96 @@
+.movie-container {
+  gap: 1rem;
+  margin: 8rem 4rem;
+  position: relative;
+}
+
+.results-area {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  gap: 6rem .5rem;
+}
+
+.movie-card {
+  height: 520px;
+}
+
+
+
+/********* Paginate *********/
+
+/* 전체 컨테이너 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+/* 각 페이지 아이템 */
+.page-item {
+  cursor: pointer;
+  background-color: #141414;
+  border: none;
+  border-radius: .2rem;
+  padding: .5rem .7rem;
+  background-color: transparent;
+  transition: all .4s;
+}
+
+.page-item:hover {
+  background-color: #505050;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: transparent;
+}
+
+.prev-btn,
+.next-btn {
+  width: 0;
+  height: 0;
+  border: none;
+  position: relative;
+}
+
+/* 이전버튼, 다음버튼 삼각형 */
+.prev-btn::before,
+.next-btn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid #fff;
+  transition: all .4s;
+}
+
+.next-btn::before {
+  border-right: 8px solid transparent;
+  border-left: 8px solid #fff;
+  transition: all .4s;
+}
+
+.page-item:hover.prev-btn::before {
+  border-right: 8px solid #505050;
+}
+
+.page-item:hover.next-btn::before {
+  border-left: 8px solid #505050;
+}
+
+.page-active {
+  background-color: #fff;
+  color: #141414;
+  font-weight: 600;
+}
+
+.page-disabled {
+  color: red;
+}

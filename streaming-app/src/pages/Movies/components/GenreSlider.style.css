@@ -1,0 +1,94 @@
+.genre-slider-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.genre-carousel-container {
+  padding-top: 15px;
+  overflow: hidden;
+}
+
+.genre-item-class {
+  padding: .25rem;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.genre-badge {
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: #262626;
+  padding: 1rem .5rem;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: .375rem;
+  transform: translateY(0);
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1) .2s;
+  cursor: pointer;
+}
+
+.genre-badge:hover {
+  background-color: #3f3f3f;
+  transform: translateY(-10px);
+}
+
+
+
+/********* Custom Dot Group **********/
+.genre-custom-dot-list-style {
+  height: 14px;
+  right: .25rem;
+  top: -10px;
+  justify-content: end;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.genre-slider-container:hover .genre-custom-dot-list-style {
+  opacity: 1;
+}
+
+.genre-custom-dot-list-style > li > button {
+  background-color: #4d4d4d;
+  width: 14px;
+  height: 2px;
+  margin: 0 0 0 3px;
+  border: none;
+  border-radius: 0;
+}
+
+.genre-custom-dot-list-style > .react-multi-carousel-dot--active > button {
+  background-color: #aaa;
+}
+
+
+
+/********* Custom Arrow **********/
+.genre-carousel-container .react-multiple-carousel__arrow {
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.genre-slider-container:hover .react-multiple-carousel__arrow {
+  opacity: 1;
+}
+
+.genre-carousel-container .react-multiple-carousel__arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  color: #fff;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.genre-carousel-container .react-multiple-carousel__arrow--left {
+  left: 0;
+}
+
+.genre-carousel-container .react-multiple-carousel__arrow--right {
+  right: 0;
+}

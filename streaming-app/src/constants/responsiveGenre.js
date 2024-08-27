@@ -1,7 +1,7 @@
-export const responsive = {
+export const responsiveGenre = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1500 },
-    items: 7,
+    items: 12,
     slidesToSlide: 3
   },
   desktop: {

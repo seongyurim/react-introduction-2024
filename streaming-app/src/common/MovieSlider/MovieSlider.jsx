@@ -1,8 +1,8 @@
 import React from "react";
+import MovieCard from "../MovieCard/MovieCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./MovieSlider.style.css";
-import MovieCard from "../MovieCard/MovieCard";
 
 const MovieSlider = ({ title, movies, responsive }) => {
   return (
@@ -10,11 +10,13 @@ const MovieSlider = ({ title, movies, responsive }) => {
       <h3 className="slide-title">{title}</h3>
       <Carousel
         infinite={true}
-        centerMode={false}
         responsive={responsive}
-        containerClass="carousel-container"
-        itemClass="carousel-item-padding-40-px"
         draggable={false}
+        showDots={true}
+        containerClass="carousel-container"
+        sliderClass="slider-class"
+        itemClass="item-class"
+        dotListClass="custom-dot-list-style"
       >
         {movies?.map((movie, idx) => (
           <MovieCard movie={movie} key={idx} />
