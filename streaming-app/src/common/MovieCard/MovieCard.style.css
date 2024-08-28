@@ -34,8 +34,8 @@
 }
 
 .movie-title {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: .8rem;
   line-height: 1.2;
 }
@@ -81,6 +81,14 @@
   line-height: 1;
   background-color: transparent;
   border: 1px solid #fff;
+}
+
+.movie-adult {
+  display: none;
+}
+
+.movie-adult.adult-display {
+  display: block;
 }
 
 .movie-genre {

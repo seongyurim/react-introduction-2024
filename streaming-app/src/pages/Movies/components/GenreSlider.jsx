@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./GenreSlider.style.css";
+import { useNavigate } from "react-router-dom";
 
-const GenreSlider = ({ genres, responsive }) => {
-  console.log("genres:", genres);
+const GenreSlider = ({ genres, responsive, selectedGenre, setSelectedGenre }) => {
+  // console.log("genres:", genres);
+  // console.log("selectedGenre:", selectedGenre);
+  
+  const navigate = useNavigate();
+
+  const handleClick = (item) => {
+    setSelectedGenre(item);
+    navigate(`/movies?genre=${item.name}`);
+  }
+  
   return (
     <div className="genre-slider-container">
       <Carousel
         infinite={true}
+        centerMode={true}
         responsive={responsive}
         draggable={true}
         showDots={true}
@@ -18,7 +29,12 @@ const GenreSlider = ({ genres, responsive }) => {
         dotListClass="genre-custom-dot-list-style"
       >
         {genres?.map((item, idx) => (
-          <div className='genre-badge' key={idx}>{item.name}</div>
+          <div
+            className={`genre-badge ${selectedGenre?.id == item.id ? 'genre-active' : ''}`}
+            onClick={() => handleClick(item)} key={idx}
+          >
+            {item.name}
+          </div>
         ))}
       </Carousel>
     </div>

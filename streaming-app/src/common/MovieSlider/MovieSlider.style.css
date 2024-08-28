@@ -13,8 +13,7 @@
 .carousel-container {
   padding-top: 20px;
   height: 400px;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
 }
 
 /* 3rd: 카드 묶음 */
@@ -30,11 +29,11 @@
 
 
 
-/* 커스텀 닷 리스트 */
+/********* Custom Dot Group **********/
 .custom-dot-list-style {
   height: 20px;
   right: .7rem;
-  top: -10px;
+  top: 0;
   justify-content: end;
   z-index: 2;
 }
@@ -50,4 +49,38 @@
 
 .custom-dot-list-style > .react-multi-carousel-dot--active > button {
   background-color: #aaa;
+}
+
+
+
+
+/********* Custom Arrow **********/
+.carousel-container .react-multiple-carousel__arrow {
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.carousel-container:hover .react-multiple-carousel__arrow {
+  opacity: 1;
+}
+
+.carousel-container .react-multiple-carousel__arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  color: #fff;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.carousel-container .react-multiple-carousel__arrow--left {
+  left: 0;
+}
+
+.carousel-container .react-multiple-carousel__arrow--right {
+  right: 0;
 }

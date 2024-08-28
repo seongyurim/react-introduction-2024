@@ -4,6 +4,17 @@
   position: relative;
 }
 
+.movie-top {
+  margin-bottom: 3rem;
+}
+
+.movie-top-info {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 .results-area {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -25,7 +36,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 /* 각 페이지 아이템 */

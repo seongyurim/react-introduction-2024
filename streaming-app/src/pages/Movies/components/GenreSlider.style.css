@@ -1,6 +1,5 @@
 .genre-slider-container {
   width: 100%;
-  margin-bottom: 2rem;
 }
 
 .genre-carousel-container {
@@ -22,13 +21,21 @@
   border: 1px solid rgba(255, 255, 255, .15);
   border-radius: .375rem;
   transform: translateY(0);
-  transition: transform .3s cubic-bezier(.4, 0, .2, 1) .2s;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
 .genre-badge:hover {
   background-color: #3f3f3f;
   transform: translateY(-10px);
+}
+
+.genre-badge.genre-active {
+  color: #141414;
+  font-weight: 700;
+  background-color: rgb(255, 255, 255);
+  transform: translateY(-10px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, background-color 0.3s ease, color 0.3s ease;
 }
 
 

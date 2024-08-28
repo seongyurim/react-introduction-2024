@@ -4,7 +4,7 @@
 .nav-container {
   z-index: 999;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -13,6 +13,12 @@
   align-items: center;
   padding: 1.5rem 4rem;
   background-image: linear-gradient(to bottom, rgba(20, 20, 20, .8) 10%, transparent);
+  transition: all .4s ease;
+}
+
+.nav-container.scrolled {
+  background-image: none;
+  background-color: #141414;
 }
 
 .nav-left-area {
@@ -55,6 +61,10 @@
   color: #d9d9d9;
 }
 
+.nav-item.active {
+  font-weight: 700;
+}
+
 .nav-item:hover,
 .nav-icons:hover {
   color: #fff;
@@ -85,7 +95,7 @@
   border: 1px solid hsla(0, 0%, 100%, .15);
   opacity: 0;
   width: 0;
-  height: 36px;
+  height: 40px;
   border-radius: .375rem;
   display: flex;
   align-items: center;
@@ -117,6 +127,7 @@
 
 .search-input {
   flex: 1;
+  font-size: 1rem;
   border-radius: inherit;
   width: 80%;
   height: 100%;

@@ -64,7 +64,7 @@ const Banner = () => {
           </p>
           <button className='preview-btn'>
             <FontAwesomeIcon icon={faPlay} className='preview-btn-icon'/>
-            <span className='preview-btn-text'>Preview</span>
+            <span className='preview-btn-text'>예고편 보기</span>
             </button>
         </div>
       </div>

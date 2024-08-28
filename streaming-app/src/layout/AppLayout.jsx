@@ -1,21 +1,25 @@
 import '../reset.css';
 import './AppLayout.style.css';
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 
 const navList = [
   { name: '홈', path: '/' },
   { name: '영화', path: '/movies'},
-  { name: '디테일', path: '/movies/:id'},
+  { name: '애니메이션', path: '/movies?genre=애니메이션'},
+  { name: '음악', path: '/movies?genre=음악'},
+  { name: '판타지', path: '/movies?genre=판타지'},
 ]
 
 const AppLayout = () => {
   const [keyword, setKeyword] = useState('');
   const [isActive, setIsActive] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const refInput = useRef(null); // input이 나타나는 즉시 focus 주기
   const navigate = useNavigate();
+  const location = useLocation(); // 현재 경로 가져오기
 
   useEffect(() => {
     if (isActive && refInput.current) {
@@ -31,15 +35,31 @@ const AppLayout = () => {
   }
 
   const searchByKeyword = () => {
-    // URL에 키워드 반영하기
-    navigate(`/movies?q=${keyword}`);
+    navigate(`/movies?q=${keyword}`); // URL에 키워드 반영
     setKeyword('');
     setIsActive(false);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 0) {
+        setIsScrolled(true);
+      }
+      else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => { // 클린업(불필요한 이벤트리스너를 제거하여 메모리 누수 방지)
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className='navigation'>
-      <div className='nav-container'>
+      <div className={`nav-container ${isScrolled ? 'scrolled' : ''}`}>
         <div className='nav-left-area'>
           <div className='logo'>
             <Link to='/' className='dom-link'>NETFLIP</Link>
@@ -66,7 +86,7 @@ const AppLayout = () => {
               <input
                 type='text'
                 className='search-input'
-                placeholder='제목, 사람, 장르'
+                placeholder='제목으로 검색'
                 value={keyword}
                 onChange={(event) => setKeyword(event.target.value)}
                 onKeyDown={handleSubmit}
