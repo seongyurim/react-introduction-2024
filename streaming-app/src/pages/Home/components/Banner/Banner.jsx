@@ -43,6 +43,7 @@ const Banner = () => {
     return <h1>데이터를 불러올 수 없습니다.</h1>;
   }
   
+  // 영화 소개글 생략 토글
   const truncateText = (text) => {
     const words = text.split(' ');
     if (words.length <= wordLimit) return text;
@@ -64,8 +65,8 @@ const Banner = () => {
           </p>
           <button className='preview-btn'>
             <FontAwesomeIcon icon={faPlay} className='preview-btn-icon'/>
-            <span className='preview-btn-text'>예고편 보기</span>
-            </button>
+            <span className='preview-btn-text'>예고편 감상</span>
+          </button>
         </div>
       </div>
     </div>

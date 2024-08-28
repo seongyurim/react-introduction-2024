@@ -8,7 +8,7 @@
   background-position: center;
 }
 
-.banner-wrapper:before {
+.banner-wrapper::before {
   content: '';
   background: linear-gradient(to top, #141414, transparent);
   position: absolute;
@@ -36,11 +36,12 @@
 }
 
 .item-desc {
+  font-size: 1.2rem;
   width: 60%;
 }
 
 .read-more-btn {
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
   margin-left: 5px;
@@ -53,11 +54,13 @@
 }
 
 .preview-btn {
-  font-size: 1.2rem;
+  line-height: 1;
+  font-size: 1.4rem;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.2rem;
   background-color: #fff;
   cursor: pointer;
   border-radius: .375rem;
@@ -70,6 +73,6 @@
 }
 
 .preview-btn-icon {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-right: 10px;
 }

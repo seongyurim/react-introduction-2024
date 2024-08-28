@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
+import { getYear } from '../../utils/getYear';
 import './MovieCard.style.css';
 
 const MovieCard = ({ movie, className = '' }) => {
+  const navigate = useNavigate();
   const posterUrl = `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`;
   const { data:genreData } = useMovieGenreQuery();
   // console.log("genre:", genreData);
@@ -21,17 +24,11 @@ const MovieCard = ({ movie, className = '' }) => {
     return genreNameList;
   }
 
-  // 개봉일에서 연도만 추출
-  const getYear = (releaseDate) => {
-    let date = new Date(releaseDate);
-    let year = date.getFullYear();
-    return year;
-  }
-
   return (
     <div
       style={{backgroundImage: `url(${posterUrl})`}}
       className={`movie-card-container ${className}`}
+      onClick={() => navigate(`/movies/${movie.id}`)}
     >
       <div className='card-overlay'>
         <div className='card-overlay-top'>
