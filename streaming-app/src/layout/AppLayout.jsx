@@ -57,6 +57,21 @@ const AppLayout = () => {
     }
   }, []);
 
+  // 현재 위치한 내비게이션 항목에만 CSS 클래스 부여
+  const isNavItemActive = (item) => {
+    const currentPath = location.pathname; // 현재 위치
+    const currentGenre = new URLSearchParams(location.search).get('genre');
+
+    // 장르 필터링 링크인 경우
+    if (item.path.includes('?genre=')) {
+      return item.path === `${currentPath}?genre=${currentGenre}`;
+    }
+    // 홈 또는 영화 링크인 경우
+    else {
+      return item.path === currentPath && !currentGenre;
+    }
+  }
+
   return (
     <div className='navigation'>
       <div className={`nav-container ${isScrolled ? 'scrolled' : ''}`}>
@@ -67,7 +82,7 @@ const AppLayout = () => {
           <ul className='nav-list'>
             {navList.map((item, idx) => (
               <li key={idx}>
-                <Link to={item.path} className='dom-link nav-item'>{item.name}</Link>
+                <Link to={item.path} className={`dom-link nav-item ${isNavItemActive(item) ? 'active' : ''}`}>{item.name}</Link>
               </li>
             ))}
           </ul>

@@ -18,7 +18,7 @@ const PopularMovieSlide = () => {
   return (
     <div>
       <MovieSlider
-        title='지금 가장 핫한 TOP 20 영화'
+        title='요즘 가장 주목받는 TOP 20 영화'
         movies={data?.results}
         responsive={responsive}
       />

@@ -19,7 +19,6 @@ const GenreSlider = ({ genres, responsive, selectedGenre, setSelectedGenre }) =>
     <div className="genre-slider-container">
       <Carousel
         infinite={true}
-        centerMode={true}
         responsive={responsive}
         draggable={true}
         showDots={true}

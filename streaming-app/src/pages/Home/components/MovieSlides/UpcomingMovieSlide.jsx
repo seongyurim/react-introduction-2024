@@ -18,7 +18,7 @@ const UpcomingMovieSlide = () => {
   return (
     <div>
       <MovieSlider
-        title='개봉을 기다리는 기대작들'
+        title='개봉을 앞둔 기대작 리스트'
         movies={data?.results}
         responsive={responsive}
         />

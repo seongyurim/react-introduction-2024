@@ -62,7 +62,8 @@
 }
 
 .nav-item.active {
-  font-weight: 700;
+  font-weight: 600;
+  color: #fff;
 }
 
 .nav-item:hover,
