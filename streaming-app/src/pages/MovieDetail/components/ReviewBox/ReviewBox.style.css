@@ -1,0 +1,14 @@
+.review-box-container {
+  background-color: #5e5e5e;
+  border-radius: .375rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.review-author-img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+}
