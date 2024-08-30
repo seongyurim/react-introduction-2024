@@ -1,19 +1,24 @@
-import './Banner.style.css';
 import React, { useEffect, useState } from 'react';
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faPlay } from '@fortawesome/free-solid-svg-icons';
 import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
+import { truncateText } from '../../../../utils/textUtil';
+import { WORD_LIMIT } from '../../../../constants/constants';
+import { useNavigate } from "react-router-dom";
+import './Banner.style.css';
 
 
 const Banner = () => {
-  const wordLimit = 25; // 영화 소개글을 축약할 단어 갯수 기준값
   const [randomIndex, setRandomIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTruncable, setIstruncable] = useState(false);
+  const navigate = useNavigate();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const mainItem = data?.results[randomIndex];
   const posterUrl = `https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${mainItem?.backdrop_path}`;
+
+  console.log("Banner's mainItem:", mainItem);
 
   // 배너 작품 랜덤으로 보여주기: 0~19 사이의 난수 생성
   useEffect(() => {
@@ -27,7 +32,7 @@ const Banner = () => {
   useEffect(() => {
     if (mainItem && mainItem.overview) {
       const words = mainItem.overview.split(' ');
-      setIstruncable(words.length > wordLimit);
+      setIstruncable(words.length > WORD_LIMIT);
     }
   }, [mainItem]);
 
@@ -41,13 +46,6 @@ const Banner = () => {
 
   if (!data || !data.results) {
     return <h1>데이터를 불러올 수 없습니다.</h1>;
-  }
-  
-  // 영화 소개글 생략 토글
-  const truncateText = (text) => {
-    const words = text.split(' ');
-    if (words.length <= wordLimit) return text;
-    return words.slice(0, wordLimit).join(' ') + '...';
   }
 
   return (
@@ -63,10 +61,16 @@ const Banner = () => {
               </span>
             )}
           </p>
-          <button className='preview-btn'>
-            <FontAwesomeIcon icon={faPlay} className='preview-btn-icon'/>
-            <span className='preview-btn-text'>예고편 감상</span>
-          </button>
+          <div className='banner-btns'>
+            <button className='basic-btn preview-btn'>
+              <FontAwesomeIcon icon={faPlay} className='btn-icon'/>
+              <span className='preview-btn-text'>예고편</span>
+            </button>
+            <button className='basic-btn detail-btn' onClick={() => navigate(`/movies/${mainItem.id}`)}>
+              <FontAwesomeIcon icon={faCircleInfo} className='btn-icon detail-btn-icon'/>
+              <span className='preview-btn-text'>상세 정보</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

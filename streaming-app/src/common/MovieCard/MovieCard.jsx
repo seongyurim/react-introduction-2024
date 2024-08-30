@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
-import { getYear } from '../../utils/getYear';
+import { getYear } from '../../utils/dateUtil';
 import './MovieCard.style.css';
 
 const MovieCard = ({ movie, className = '' }) => {

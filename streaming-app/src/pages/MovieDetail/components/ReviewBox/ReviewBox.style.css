@@ -1,0 +1,79 @@
+.review-box-container {
+  line-height: 1.4;
+  background-color: #2b2b2b;
+  border-radius: .375rem;
+  padding: 2rem;
+  margin: 20px 0;
+  display: flex;
+  gap: 3rem;
+}
+
+.review-author-img {
+  flex-shrink: 0;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+}
+
+.review-author-info {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.review-author-id {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: .3rem;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  margin-top: .3rem;
+}
+
+.review-author-content {
+  flex-grow: 1;
+}
+
+.review-author-date {
+  flex-shrink: 0;
+}
+
+.review-created-at,
+.review-updated-at {
+  font-size: .95rem;
+  color: #c8c8c8;
+  text-align: end;
+}
+
+.review-date-desc {
+  color: #878787;
+  font-size: .9rem;
+}
+
+.review-author-date > div + div {
+  margin-top: 5px;
+}
+
+.read-more-btn-review {
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  top: -1px;
+  cursor: pointer;
+  color: #868686;
+  transition: all .3s;
+  margin-top: 5px;
+}
+
+.read-more-btn-review:hover {
+  color: #cacaca;
+}
+
+.read-more-btn-arrow {
+  font-size: .88rem;
+  margin-right: 3px;
+}

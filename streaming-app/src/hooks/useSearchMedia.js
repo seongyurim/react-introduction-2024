@@ -4,8 +4,8 @@ import api from "../utils/api";
 const fetchSearchMovie = ({ keyword, page, genre }) => {
   const params = {
     language: 'ko',
-    page,
     query: keyword,
+    page,
     ...(genre && { with_genres: genre }),
   };
 

@@ -2,13 +2,14 @@ import React from 'react';
 import { useNowPlayingMoviesQuery } from '../../../../hooks/useNowPlayingMovies';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import { responsive } from "../../../../constants/responsive";
+import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
 
 const NowPlayingMovieSlide = () => {
   const { data, isLoading, isError, error } = useNowPlayingMoviesQuery();
   // console.log("useNowPlayingMoviesQuery's data:", data);
 
   if (isLoading) {
-    return <h1>useNowPlayingMoviesQuery Loading...</h1>;
+    return <LoadingSpinner />;
   }
 
   if (isError) {

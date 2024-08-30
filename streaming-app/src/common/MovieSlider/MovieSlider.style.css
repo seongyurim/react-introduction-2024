@@ -1,6 +1,6 @@
 /* 1st: 타이틀 포함 */
 .movie-slide-container {
-  margin: 4rem;
+  margin: 4rem 0;
   letter-spacing: -.006rem;
 }
 
@@ -83,4 +83,28 @@
 
 .carousel-container .react-multiple-carousel__arrow--right {
   right: 0;
+}
+
+.react-multiple-carousel__arrow--left::before {
+  content: '';
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #fff;
+}
+
+.react-multiple-carousel__arrow--right::before {
+  content: '';
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+  border-right: 10px solid transparent;
 }

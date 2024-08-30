@@ -104,7 +104,7 @@ const AppLayout = () => {
                 placeholder='제목으로 검색'
                 value={keyword}
                 onChange={(event) => setKeyword(event.target.value)}
-                onKeyDown={handleSubmit}
+                onKeyPress={handleSubmit}
                 ref={refInput}
                 onBlur={() => setIsActive(false)}
               />

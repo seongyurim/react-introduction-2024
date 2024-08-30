@@ -2,13 +2,14 @@ import React from 'react';
 import { useTopRatedMoviesQuery } from '../../../../hooks/useTopRatedMovies';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import { responsive } from "../../../../constants/responsive";
+import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
 
 const TopRatedMovieSlide = () => {
   const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
   // console.log("TopRatedMovieSlide's data:", data);
 
   if (isLoading) {
-    return <h1>TopRatedMovieSlide Loading...</h1>;
+    return <LoadingSpinner />;
   }
 
   if (isError) {

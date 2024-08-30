@@ -43,6 +43,8 @@
 .read-more-btn {
   font-size: 1rem;
   font-weight: 800;
+  position: relative;
+  top: -1px;
   cursor: pointer;
   margin-left: 5px;
   color: #a5a5a5;
@@ -53,10 +55,18 @@
   color: #535353;
 }
 
-.preview-btn {
+.banner-btns {
+  display: flex;
+}
+
+.banner-btns > button + button {
+  margin-left: 20px;
+}
+
+.basic-btn {
   line-height: 1;
   font-size: 1.4rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,11 +78,20 @@
   transition: background-color .4s;
 }
 
-.preview-btn:hover {
-  background-color: #a7a7a7;
+.basic-btn:hover {
+  background-color: rgba(167, 167, 167, .6);
 }
 
-.preview-btn-icon {
+.btn-icon {
   font-size: 1.2rem;
   margin-right: 10px;
+}
+
+.detail-btn {
+  background-color: rgba(109, 109, 110, .6);
+  color: inherit;
+}
+
+.detail-btn-icon {
+  font-size: 1.3rem;
 }

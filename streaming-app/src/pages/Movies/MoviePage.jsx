@@ -8,6 +8,7 @@ import GenreSlider from "./components/GenreSlider";
 import { genreResponsive } from "../../constants/responsive";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import "./MoviePage.style.css";
+import Footer from "../../common/Footer/Footer";
 
 const MoviePage = () => {
   const [page, setPage] = useState(1);
@@ -105,6 +106,7 @@ const MoviePage = () => {
           disabledClassName="page-disabled" // 비활성화된 버튼 css
         />
       </div>
+      <Footer />
     </div>
   );
 };
