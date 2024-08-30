@@ -24,6 +24,39 @@ const ReviewBox = ({ review }) => {
     }
   }, [review]);
 
+  // 별 그리기
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating / 2);
+    const hasHalfStar = rating % 2 !== 0;
+    const stars = [];
+
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) {
+        stars.push(
+          <span className='star-wrapper' key={i}>
+            <FontAwesomeIcon icon={faStar} className='star-icon full' />
+          </span>
+        );
+      }
+      else if (i === fullStars && hasHalfStar) {
+        stars.push(
+          <span className='star-wrapper' key={i}>
+            <FontAwesomeIcon icon={faStar} className='star-icon half' />
+            <FontAwesomeIcon icon={faStar} className='star-icon empty' />
+          </span>
+        );
+      }
+      else {
+        stars.push(
+          <span className='star-wrapper' key={i}>
+            <FontAwesomeIcon icon={faStar} className='star-icon empty' />
+          </span>
+        );
+      }
+    }
+    return <span>{stars}</span>
+  };
+
 
   return (
     <div className='review-box-container'>
@@ -32,7 +65,7 @@ const ReviewBox = ({ review }) => {
         <div className='review-author-id'>{review.author}</div>
         {review.author_details.rating && (
           <span className='review-rating'>
-            <FontAwesomeIcon icon={faStar} className='star-icon' />
+            {renderStars(review.author_details.rating)}
             <span className='reiview-rating-score'>{review.author_details.rating}</span>
           </span>
         )}

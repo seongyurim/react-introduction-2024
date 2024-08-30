@@ -29,9 +29,52 @@
 }
 
 .review-rating {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   margin-top: .3rem;
+  position: relative;
+}
+
+.star-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+.star-wrapper .star-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.star-icon.full {
+  color: gold;
+}
+
+.star-icon.empty {
+  color: gray;
+}
+
+.star-icon.half {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: gold;
+  z-index: 2;
+  clip-path: inset(0 50% 0 0);
+}
+
+.reiview-rating-score {
+  margin-left: 5px;
+  line-height: 1em;
+  vertical-align: middle;
+  position: absolute;
+  right: -16px;
+  top: 2.3px;
 }
 
 .review-author-content {

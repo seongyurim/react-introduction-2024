@@ -50,11 +50,11 @@
   margin-top: 8px;
 }
 
-.star-icon,
-.heart-icon {
+.movie-vote-average .star-icon,
+.movie-vote-average .heart-icon {
   font-size: .85rem;
   vertical-align: center;
-  color: rgb(247, 221, 75);
+  color: gold;
   margin-right: 6px;
 }
 

@@ -24,8 +24,8 @@ const DetailBanner = ({ data }) => {
         <div className='detail-article'>
           <div className='detail-left-section'>
             <div className='detail-badges-wrapper'>
-              <div className='detail-badges'>{getYear(data?.release_date)}</div>
-              <div className='detail-badges'>{data?.runtime}분</div>
+              {(data?.release_date !== '') && (<div className='detail-badges'>{getYear(data?.release_date)}</div>)}
+              {(data?.runtime !== 0) && (<div className='detail-badges'>{data?.runtime}분</div>)}
               <div className='detail-vote-average'>
                 <div className='detail-badges'>
                   <FontAwesomeIcon icon={faStar} className='star-icon' />
@@ -54,7 +54,7 @@ const DetailBanner = ({ data }) => {
             </div>
             <button className='basic-btn preview-btn'>
               <FontAwesomeIcon icon={faPlay} className='btn-icon'/>
-              <span className='preview-btn-text'>예고편 감상</span>
+              <span className='preview-btn-text'>예고편 보기</span>
             </button>
           </div>
           <div className='detail-right-section'>

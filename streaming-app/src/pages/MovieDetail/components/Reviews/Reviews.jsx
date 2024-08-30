@@ -18,7 +18,10 @@ const Reviews = ({ id }) => {
 
   return (
     <div className='reviews-container'>
-      <h3 className='reviews-title'>리뷰 인사이드: 팬들이 말하는 이야기</h3>
+      <div className='reviews-title'>
+        <h3 className='reviews-title-txt'>리뷰 인사이드: 팬들이 말하는 이야기</h3>
+        <span className='reviews-title-count'>({data.length})</span>
+      </div>
       {(data.length === 0) ? (
         <div className='no-review'>리뷰가 아직 작성되지 않았어요.</div>
       ) : (

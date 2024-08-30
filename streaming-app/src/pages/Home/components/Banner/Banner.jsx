@@ -64,7 +64,7 @@ const Banner = () => {
           <div className='banner-btns'>
             <button className='basic-btn preview-btn'>
               <FontAwesomeIcon icon={faPlay} className='btn-icon'/>
-              <span className='preview-btn-text'>예고편</span>
+              <span className='preview-btn-text'>예고편 보기</span>
             </button>
             <button className='basic-btn detail-btn' onClick={() => navigate(`/movies/${mainItem.id}`)}>
               <FontAwesomeIcon icon={faCircleInfo} className='btn-icon detail-btn-icon'/>

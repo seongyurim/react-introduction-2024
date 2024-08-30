@@ -17,11 +17,13 @@ const RelatedMoviesSlide = ({ id }) => {
   }
   return (
     <div>
-      <MovieSlider
-        title='추천! 이 영화와 비슷한 작품들'
-        movies={data?.results}
-        responsive={responsive}
-      />
+      {(data?.results.length !== 0) && (
+        <MovieSlider
+          title='추천! 이 영화와 비슷한 작품들'
+          movies={data?.results}
+          responsive={responsive}
+        />
+      )}
     </div>
   );
 };

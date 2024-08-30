@@ -12,7 +12,7 @@ const MovieDetailPage = () => {
   const { id } = useParams();
   console.log("id:", id);
   const { data, isLoading, isError, error } = useMovieDetailQuery(id);
-  // console.log("useMovieDetailQuery's data:", data);
+  console.log("useMovieDetailQuery's data:", data);
 
   if (isLoading) {
     return <LoadingSpinner />
@@ -26,7 +26,7 @@ const MovieDetailPage = () => {
     <div className='movie-detail-container'>
       <DetailBanner data={data} />
       <div className='movie-bottom-info'>
-        <RelatedMoviesSlide id={id} className='related-movie-slider-container'/>
+        <RelatedMoviesSlide id={id} />
         <Reviews id={id} />
       </div>
       <Footer />
