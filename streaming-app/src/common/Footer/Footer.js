@@ -1,12 +1,20 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { useNavigate } from "react-router-dom";
 import './Footer.style.css';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/');
+    window.scrollTo(0, 0);
+  }
+
   return (
     <footer className='footer-container'>
-      <div className='footer-logo'>NETFLIP</div>
+      <div className='footer-logo' onClick={handleClick}>NETFLIP</div>
       <div className='footer-socials-area'>
         <div className='footer-social-icon'><FontAwesomeIcon icon={faYoutube} /></div>
         <div className='footer-social-icon'><FontAwesomeIcon icon={faFacebook} /></div>
