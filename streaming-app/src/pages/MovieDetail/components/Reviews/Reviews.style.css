@@ -1,0 +1,11 @@
+.reviews-title {
+  font-size: 1.4vw;
+  font-weight: 500;
+}
+
+.no-review {
+  background-color: #2b2b2b;
+  border-radius: .375rem;
+  padding: 2.5rem;
+  margin: 20px 0;
+}

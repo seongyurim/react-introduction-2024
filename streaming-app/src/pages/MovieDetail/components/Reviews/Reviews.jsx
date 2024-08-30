@@ -1,7 +1,7 @@
 import React from 'react';
-import LoadingSpinner from '../../../common/LoadingSpinner/LoadingSpinner';
-import { useMovieReviewQuery } from '../../../hooks/useMovieReview';
-import ReviewBox from './ReviewBox/ReviewBox';
+import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
+import { useMovieReviewQuery } from '../../../../hooks/useMovieReview';
+import ReviewBox from '../ReviewBox/ReviewBox';
 import './Reviews.style.css';
 
 const Reviews = ({ id }) => {
@@ -18,9 +18,9 @@ const Reviews = ({ id }) => {
 
   return (
     <div className='reviews-container'>
-      <h3>리뷰</h3>
+      <h3 className='reviews-title'>리뷰 인사이드: 팬들이 말하는 이야기</h3>
       {(data.length === 0) ? (
-        <div>이 영화에는 리뷰가 아직 없어요.</div>
+        <div className='no-review'>리뷰가 아직 작성되지 않았어요.</div>
       ) : (
         data.map((review, idx) => (
           <ReviewBox review={review} key={idx} />

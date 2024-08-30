@@ -2,13 +2,14 @@ import React from 'react';
 import { useUpcomingMoviesQuery } from '../../../../hooks/useUpcomingMovies';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import { responsive } from "../../../../constants/responsive";
+import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
 
 const UpcomingMovieSlide = () => {
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
   // console.log("UpcomingMovieSlide's data:", data);
 
   if (isLoading) {
-    return <h1>UpcomingMovieSlide Loading...</h1>;
+    return <LoadingSpinner />;
   }
 
   if (isError) {

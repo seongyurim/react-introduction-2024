@@ -5,15 +5,18 @@ import TopRatedMovieSlide from './components/MovieSlides/TopRatedMovieSlide';
 import UpcomingMovieSlide from './components/MovieSlides/UpcomingMovieSlide';
 import Footer from '../../common/Footer/Footer';
 import NowPlayingMovieSlide from './components/MovieSlides/NowPlayingMovieSlide';
+import './HomePage.style.css';
 
 const HomePage = () => {
   return (
     <div className='home-container'>
       <Banner />
-      <NowPlayingMovieSlide />
-      <TopRatedMovieSlide />
-      <PopularMovieSlide />
-      <UpcomingMovieSlide />
+      <div className='home-slides'>
+        <NowPlayingMovieSlide />
+        <TopRatedMovieSlide />
+        <PopularMovieSlide />
+        <UpcomingMovieSlide />
+      </div>
       <Footer />
     </div>
   );

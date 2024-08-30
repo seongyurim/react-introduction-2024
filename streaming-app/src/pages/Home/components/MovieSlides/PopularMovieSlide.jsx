@@ -2,13 +2,14 @@ import React from "react";
 import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
 import { responsive } from "../../../../constants/responsive";
+import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   // console.log("PopularMovieSlide's data:", data);
 
   if (isLoading) {
-    return <h1>PopularMovieSlide Loading...</h1>;
+    return <LoadingSpinner />;
   }
 
   if (isError) {

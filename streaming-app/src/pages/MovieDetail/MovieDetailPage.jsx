@@ -7,8 +7,10 @@ import { getYear } from '../../utils/dateUtil';
 import LoadingSpinner from '../../common/LoadingSpinner/LoadingSpinner';
 import { truncateText } from '../../utils/textUtil';
 import { WORD_LIMIT } from '../../constants/constants';
+import Reviews from './components/Reviews/Reviews';
+import RelatedMoviesSlide from './components/RelatedMoviesSlide';
+import Footer from '../../common/Footer/Footer';
 import './MovieDetailPage.style.css';
-import Reviews from './components/Reviews';
 
 const MovieDetailPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,9 +37,8 @@ const MovieDetailPage = () => {
 
   return (
     <div className='movie-detail-container'>
-      <div
-        className='detail-bg-wrapper'
-        style={{backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${data?.backdrop_path}')`}}>
+      <div className='detail-bg-wrapper'>
+        <div className='detail-bg' style={{backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${data?.backdrop_path}')`}}></div>
         <div className='detail-article'>
           <div className='detail-left-section'>
             <div className='detail-badges-wrapper'>
@@ -79,7 +80,9 @@ const MovieDetailPage = () => {
           </div>
         </div>
       </div>
+      <RelatedMoviesSlide id={id} className='related-movie-slider-container'/>
       <Reviews id={id} />
+      <Footer />
     </div>
   );
 };
