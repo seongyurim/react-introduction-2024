@@ -16,9 +16,8 @@ const Banner = () => {
   const navigate = useNavigate();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const mainItem = data?.results[randomIndex];
+  // console.log("Banner's mainItem:", mainItem);
   const posterUrl = `https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${mainItem?.backdrop_path}`;
-
-  console.log("Banner's mainItem:", mainItem);
 
   // 배너 작품 랜덤으로 보여주기: 0~19 사이의 난수 생성
   useEffect(() => {

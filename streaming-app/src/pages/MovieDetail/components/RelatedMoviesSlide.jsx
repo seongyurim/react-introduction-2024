@@ -15,6 +15,7 @@ const RelatedMoviesSlide = ({ id }) => {
   if (isError) {
     console.log("useRelatedMoviesQuery Error Message:", error.message);
   }
+  
   return (
     <div>
       {(data?.results.length !== 0) && (
