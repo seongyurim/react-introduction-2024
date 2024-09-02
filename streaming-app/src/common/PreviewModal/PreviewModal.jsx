@@ -17,7 +17,7 @@ const PreviewModal = ({ show, onHide, movie }) => {
       autoplay: 1,
       autohide: 1,
       rel: 1,
-      modestbranding: 0,
+      modestbranding: 1,
     },
   };
 

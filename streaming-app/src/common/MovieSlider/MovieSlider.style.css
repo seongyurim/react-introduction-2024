@@ -5,7 +5,7 @@
 }
 
 .slide-title {
-  font-size: 1.4vw;
+  font-size: 1.7rem;
   font-weight: 500;
 }
 
@@ -26,6 +26,7 @@
   padding-right: .5rem;
   box-sizing: border-box;
 }
+
 
 
 
@@ -107,4 +108,81 @@
   border-bottom: 10px solid transparent;
   border-left: 10px solid #fff;
   border-right: 10px solid transparent;
+}
+
+
+
+
+/********** 1. 작은 태블릿 및 대형 스마트폰 **********/
+@media (max-width: 575px) {
+  .movie-slide-container {
+    margin-top: 2rem;
+  }
+
+  .carousel-container {
+    padding-top: 10px;
+    height: 150px;
+  }
+
+  .slide-title {
+    font-size: 1rem;
+  }
+
+  .custom-dot-list-style,
+  .carousel-container .react-multiple-carousel__arrow,
+  .carousel-container .react-multiple-carousel__arrow--left,
+  .carousel-container .react-multiple-carousel__arrow--right {
+    display: none;
+  }
+}
+
+/********** 1. 작은 태블릿 및 대형 스마트폰 **********/
+@media (min-width: 576px) and (max-width: 767px) {
+  .movie-slide-container {
+    margin-top: 2rem;
+  }
+  
+  .slide-title {
+    font-size: 1rem;
+  }
+
+  .carousel-container {
+    padding-top: 10px;
+    height: 250px;
+  }
+
+  .custom-dot-list-style,
+  .carousel-container .react-multiple-carousel__arrow,
+  .carousel-container .react-multiple-carousel__arrow--left,
+  .carousel-container .react-multiple-carousel__arrow--right {
+    display: none;
+  }
+}
+
+/********** 2. 태블릿 **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-container {
+    padding-top: 10px;
+  }
+
+  .custom-dot-list-style,
+  .carousel-container .react-multiple-carousel__arrow,
+  .carousel-container .react-multiple-carousel__arrow--left,
+  .carousel-container .react-multiple-carousel__arrow--right {
+    display: none;
+  }
+}
+
+/********** 3. 작은 노트북 및 데스크탑 **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-container {
+    height: 300px;
+  }
+
+  .custom-dot-list-style,
+  .carousel-container .react-multiple-carousel__arrow,
+  .carousel-container .react-multiple-carousel__arrow--left,
+  .carousel-container .react-multiple-carousel__arrow--right {
+    display: none;
+  }
 }

@@ -11,7 +11,7 @@ const MovieSlider = ({ title, movies, responsive }) => {
       <Carousel
         infinite={true}
         responsive={responsive}
-        draggable={false}
+        draggable={true}
         showDots={true}
         containerClass="carousel-container"
         sliderClass="slider-class"

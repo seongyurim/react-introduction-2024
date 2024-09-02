@@ -1,0 +1,45 @@
+/* 모바일 */
+@media (max-width: 575px) {
+
+}
+
+/* 작은 태블릿 및 대형 스마트폰 */
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* 작은 노트북 및 데스크탑 */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* 대형 데스크탑 */
+@media (min-width: 1200px) {
+
+}
+
+
+
+
+
+
+
+/********** 1. 작은 태블릿 및 대형 스마트폰 **********/
+@media (max-width: 767px) {
+
+}
+
+/********** 2. 태블릿 **********/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/********** 3. 작은 노트북 및 데스크탑 **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}

@@ -3,7 +3,8 @@
 }
 
 .banner-wrapper {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   height: 85vh;
   background-size: cover;
   background-position: center;
@@ -13,17 +14,18 @@
 .banner-wrapper::before {
   content: '';
   background: linear-gradient(to top, #141414, transparent);
+  /* background-color: green; */
   position: absolute;
   left: 0;
   height: inherit;
-  width: inherit;
+  width: 100%;
 }
 
 .item-info-area {
   position: absolute;
-  width: 50vw;
+  width: 50%;
   left: 0;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   line-height: 1.6;
   padding-left: 4rem;
@@ -39,7 +41,7 @@
 
 .item-desc {
   font-size: 1.2rem;
-  width: 60%;
+  width: 80%;
 }
 
 .read-more-btn {
@@ -48,7 +50,6 @@
   position: relative;
   top: -1px;
   cursor: pointer;
-  margin-left: 5px;
   color: #a5a5a5;
   transition: all .3s;
 }
@@ -58,17 +59,14 @@
 }
 
 .banner-btns {
+  margin-top: 1.5rem;
   display: flex;
-}
-
-.banner-btns > button + button {
-  margin-left: 20px;
+  gap: 1rem;
 }
 
 .basic-btn {
   line-height: 1;
   font-size: 1.4rem;
-  /* font-weight: 600; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +74,6 @@
   background-color: #fff;
   cursor: pointer;
   border-radius: .375rem;
-  margin-top: 1.5rem;
   transition: background-color .4s;
 }
 
@@ -96,4 +93,67 @@
 
 .detail-btn-icon {
   font-size: 1.3rem;
+}
+
+
+
+
+/********** 1. 작은 태블릿 및 대형 스마트폰 **********/
+@media (max-width: 767px) {
+  .item-info-area {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    top: auto;
+    bottom: 0;
+    transform: translateY(0);
+  }
+
+  .item-title {
+    font-size: 2.5rem;
+  }
+
+  .item-desc {
+    display: none;
+  }
+
+  .banner-btns {
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .basic-btn {
+    padding: 1rem 2rem;
+  }
+}
+
+/********** 2. 태블릿 **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .item-info-area {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    top: auto;
+    bottom: 0;
+    transform: translateY(0);
+  }
+
+  .item-title {
+    font-size: 3.5rem;
+  }
+  
+  .item-desc {
+    width: 90%;
+  }
+
+  .banner-btns > button {
+    width: 100%;
+  }
+}
+
+/********** 3. 작은 노트북 및 데스크탑 **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .item-info-area {
+    width: 100%;
+  }
 }
