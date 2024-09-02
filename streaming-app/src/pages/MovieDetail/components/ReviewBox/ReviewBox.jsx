@@ -24,7 +24,7 @@ const ReviewBox = ({ review }) => {
     }
   }, [review]);
 
-  // 별 그리기
+  // 평점만큼 별 그리기
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating / 2);
     const hasHalfStar = rating % 2 !== 0;

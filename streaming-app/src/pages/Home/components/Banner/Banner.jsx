@@ -7,12 +7,14 @@ import { truncateText } from '../../../../utils/textUtil';
 import { WORD_LIMIT } from '../../../../constants/constants';
 import { useNavigate } from "react-router-dom";
 import './Banner.style.css';
+import PreviewModal from '../../../../common/PreviewModal/PreviewModal';
 
 
 const Banner = () => {
   const [randomIndex, setRandomIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTruncable, setIstruncable] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const navigate = useNavigate();
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   const mainItem = data?.results[randomIndex];
@@ -61,7 +63,7 @@ const Banner = () => {
             )}
           </p>
           <div className='banner-btns'>
-            <button className='basic-btn preview-btn'>
+            <button className='basic-btn preview-btn' onClick={() => setModalShow(true)}>
               <FontAwesomeIcon icon={faPlay} className='btn-icon'/>
               <span className='preview-btn-text'>예고편 보기</span>
             </button>
@@ -72,6 +74,8 @@ const Banner = () => {
           </div>
         </div>
       </div>
+
+      <PreviewModal show={modalShow} onHide={() => setModalShow(false)} movie={mainItem}/>
     </div>
   );
 };

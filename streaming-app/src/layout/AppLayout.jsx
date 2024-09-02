@@ -17,13 +17,13 @@ const AppLayout = () => {
   const [keyword, setKeyword] = useState('');
   const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const refInput = useRef(null); // input이 나타나는 즉시 focus 주기
+  const inputRef = useRef(null); // input이 나타나는 즉시 focus 주기
   const navigate = useNavigate();
   const location = useLocation(); // 현재 경로 가져오기
 
   useEffect(() => {
-    if (isActive && refInput.current) {
-      refInput.current.focus();
+    if (isActive && inputRef.current) {
+      inputRef.current.focus();
     }
   }, [isActive]);
 
@@ -105,7 +105,7 @@ const AppLayout = () => {
                 value={keyword}
                 onChange={(event) => setKeyword(event.target.value)}
                 onKeyPress={handleSubmit}
-                ref={refInput}
+                ref={inputRef}
                 onBlur={() => setIsActive(false)}
               />
             </div>

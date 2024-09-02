@@ -10,9 +10,9 @@ import './MovieDetailPage.style.css';
 
 const MovieDetailPage = () => {
   const { id } = useParams();
-  console.log("id:", id);
+  // console.log("MovieDetailPage's id:", id);
   const { data, isLoading, isError, error } = useMovieDetailQuery(id);
-  console.log("useMovieDetailQuery's data:", data);
+  // console.log("useMovieDetailQuery's data:", data);
 
   if (isLoading) {
     return <LoadingSpinner />
@@ -24,7 +24,7 @@ const MovieDetailPage = () => {
 
   return (
     <div className='movie-detail-container'>
-      <DetailBanner data={data} />
+      <DetailBanner movie={data} />
       <div className='movie-bottom-info'>
         <RelatedMoviesSlide id={id} />
         <Reviews id={id} />

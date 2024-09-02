@@ -4,45 +4,54 @@ import { faHeart, faStar, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { getYear } from '../../../../utils/dateUtil';
 import { truncateText } from '../../../../utils/textUtil';
 import { WORD_LIMIT } from '../../../../constants/constants';
+import PreviewModal from '../../../../common/PreviewModal/PreviewModal';
 import './DetailBanner.style.css';
+import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
 
-const DetailBanner = ({ data }) => {
+const DetailBanner = ({ movie }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTruncable, setIstruncable] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
+  const [isImageLoad, setIsImageLoad] = useState(false);
 
   useEffect(() => {
-    if (data && data.overview) {
-      const words = data.overview.split(' ');
+    if (movie && movie.overview) {
+      const words = movie.overview.split(' ');
       setIstruncable(words.length > WORD_LIMIT);
     }
-  }, [data]);
+  }, [movie]);
+
+  const handleImageLoad = () => {
+    setIsImageLoad(true);
+  }
 
   return (
     <div className='movie-detail-banner-container'>
+      {(!isImageLoad) && <LoadingSpinner />}
       <div className='detail-bg-wrapper'>
-        <div className='detail-bg' style={{backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${data?.backdrop_path}')`}}></div>
+        <div className='detail-bg' style={{backgroundImage: `url('https://www.themoviedb.org/t/p/w1920_and_h1080_multi_faces${movie?.backdrop_path}')`}}></div>
         <div className='detail-article'>
           <div className='detail-left-section'>
             <div className='detail-badges-wrapper'>
-              {(data?.release_date !== '') && (<div className='detail-badges'>{getYear(data?.release_date)}</div>)}
-              {(data?.runtime !== 0) && (<div className='detail-badges'>{data?.runtime}분</div>)}
+              {(movie?.release_date !== '') && (<div className='detail-badges'>{getYear(movie?.release_date)}</div>)}
+              {(movie?.runtime !== 0) && (<div className='detail-badges'>{movie?.runtime}분</div>)}
               <div className='detail-vote-average'>
                 <div className='detail-badges'>
                   <FontAwesomeIcon icon={faStar} className='star-icon' />
-                  <span className='vote-score'>{data?.vote_average.toFixed(1)}</span>
+                  <span className='vote-score'>{movie?.vote_average.toFixed(1)}</span>
                 </div>
               </div>
               <div className='detail-popularity'>
                 <div className='detail-badges'>
                   <FontAwesomeIcon icon={faHeart} className='heart-icon' />
-                  <span className='pop-score'>{Math.round(data?.popularity)}</span>
+                  <span className='pop-score'>{Math.round(movie?.popularity)}</span>
                 </div>
               </div>
             </div>
-            <h1 className='detail-title'>{data?.title}</h1>
-            <p className='detail-tagline'>{data?.tagline}</p>
+            <h1 className='detail-title'>{movie?.title}</h1>
+            <p className='detail-tagline'>{movie?.tagline}</p>
             <p className='detail-overview'>
-              {isExpanded ? data?.overview : truncateText(data?.overview)}
+              {isExpanded ? movie?.overview : truncateText(movie?.overview)}
               {isTruncable && (
                 <span onClick={() => setIsExpanded(!isExpanded)} className='read-more-btn'>
                   {isExpanded ? '접기' : '더보기'}
@@ -50,18 +59,20 @@ const DetailBanner = ({ data }) => {
               )}
             </p>
             <div className='detail-genre-box'>
-              {data?.genres.map((item, idx) => <div className='detail-genre' key={idx}>{item.name}</div>)}
+              {movie?.genres.map((item, idx) => <div className='detail-genre' key={idx}>{item.name}</div>)}
             </div>
             <button className='basic-btn preview-btn'>
               <FontAwesomeIcon icon={faPlay} className='btn-icon'/>
-              <span className='preview-btn-text'>예고편 보기</span>
+              <span className='preview-btn-text' onClick={() => setModalShow(true)}>예고편 보기</span>
             </button>
           </div>
           <div className='detail-right-section'>
-            <img className='detail-poster' src={`https://www.themoviedb.org/t/p/w600_and_h900_multi_faces${data?.poster_path}`} alt={data?.title} />
+            <img className='detail-poster' src={`https://www.themoviedb.org/t/p/w600_and_h900_multi_faces${movie?.poster_path}`} alt={movie?.title} onLoad={handleImageLoad}/>
           </div>
         </div>
       </div>
+
+      <PreviewModal show={modalShow} onHide={() => setModalShow(false)} movie={movie}/>
     </div>
   );
 };

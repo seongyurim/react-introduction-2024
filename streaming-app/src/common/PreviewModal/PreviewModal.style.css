@@ -1,0 +1,80 @@
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, .6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+.modal-container.show {
+  opacity: 1;
+}
+
+.modal-close-btn {
+  position: absolute;
+  font-size: 3rem;
+}
+
+.modal-video-wrapper {
+  width: 60vw;
+  height: 60vh;
+  background-color: #141414;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, .15);
+  position: relative;
+  opacity: 0;
+  transform: scale(.8);
+  transition: all .4s ease-in-out;
+}
+
+.modal-video-wrapper.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  cursor: pointer;
+  font-size: 3rem;
+  position: absolute;
+  right: -55px;
+  top: 0;
+  transition: all .4s ease;
+}
+
+.modal-close-btn:hover {
+  color: #8a8a8a;
+}
+
+.youtube-frame {
+  border-radius: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+}
+
+.modal-error-wrapper {
+  padding: 2.5rem;
+  background-color: #313131;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.modal-error-icon {
+  font-size: 3rem;
+}
+
+.modal-error-txt {
+  font-size: 1.2rem;
+}

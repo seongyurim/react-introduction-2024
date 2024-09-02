@@ -1,3 +1,4 @@
+// 영화 슬라이더
 export const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1500 },
@@ -18,6 +19,7 @@ export const responsive = {
   }
 };
 
+// 장르 슬라이더
 export const genreResponsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1500 },

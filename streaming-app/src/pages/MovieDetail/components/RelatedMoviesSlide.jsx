@@ -6,7 +6,7 @@ import { useRelatedMoviesQuery } from '../../../hooks/useRelatedMovies';
 
 const RelatedMoviesSlide = ({ id }) => {
   const { data, isLoading, isError, error } = useRelatedMoviesQuery(id);
-  console.log("useRelatedMoviesQuery's data:", data);
+  // console.log("useRelatedMoviesQuery's data:", data);
 
   if (isLoading) {
     return <LoadingSpinner />;
