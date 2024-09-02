@@ -111,9 +111,9 @@ const AppLayout = () => {
             </div>
           </div>
           
-          <div className='nav-right-user-box'>
+          {/* <div className='nav-right-user-box'>
             <FontAwesomeIcon icon={faUser} className='nav-icons'/>
-          </div>
+          </div> */}
         </div>
       </div>
       <Outlet />

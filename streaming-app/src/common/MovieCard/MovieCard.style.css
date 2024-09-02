@@ -51,14 +51,14 @@
 }
 
 .movie-vote-average .star-icon,
-.movie-vote-average .heart-icon {
+.movie-popularity .heart-icon {
   font-size: .85rem;
   vertical-align: center;
   color: gold;
   margin-right: 6px;
 }
 
-.heart-icon {
+.movie-popularity .heart-icon {
   color: rgb(252, 69, 63);
 }
 
@@ -95,4 +95,10 @@
   background-color: rgb(167, 167, 167);
   border-radius: 50%;
   margin: 3px 7px;
+}
+
+@media (max-width: 767px) {
+  .card-overlay {
+    display: none;
+  }
 }

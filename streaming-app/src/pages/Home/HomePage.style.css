@@ -25,5 +25,7 @@
 
 /********** 3. 작은 노트북 및 데스크탑 **********/
 @media (min-width: 992px) and (max-width: 1199px) {
-
+  .home-slides {
+    margin: 2rem;
+  }
 }

@@ -5,8 +5,8 @@ import { getYear } from '../../../../utils/dateUtil';
 import { truncateText } from '../../../../utils/textUtil';
 import { WORD_LIMIT } from '../../../../constants/constants';
 import PreviewModal from '../../../../common/PreviewModal/PreviewModal';
-import './DetailBanner.style.css';
 import LoadingSpinner from '../../../../common/LoadingSpinner/LoadingSpinner';
+import './DetailBanner.style.css';
 
 const DetailBanner = ({ movie }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -63,7 +63,7 @@ const DetailBanner = ({ movie }) => {
             </div>
             <button className='basic-btn preview-btn'>
               <FontAwesomeIcon icon={faPlay} className='btn-icon'/>
-              <span className='preview-btn-text' onClick={() => setModalShow(true)}>예고편 보기</span>
+              <span className='preview-btn-text' onClick={() => setModalShow(true)}>예고편</span>
             </button>
           </div>
           <div className='detail-right-section'>

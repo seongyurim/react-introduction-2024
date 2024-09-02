@@ -39,6 +39,24 @@
   margin-bottom: 1rem;
 }
 
+.banner-genres {
+  display: none;
+}
+
+.banner-movie-genre {
+  display: inline-block;
+}
+
+.banner-movie-genre + .banner-movie-genre::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #f15961;
+  border-radius: 50%;
+  margin: 3px 7px;
+}
+
 .item-desc {
   font-size: 1.2rem;
   width: 80%;
@@ -111,6 +129,14 @@
 
   .item-title {
     font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: .5rem;
+  }
+
+  .banner-genres {
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
   }
 
   .item-desc {

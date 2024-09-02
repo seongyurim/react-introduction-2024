@@ -114,14 +114,14 @@
 
 
 /********** 1. 작은 태블릿 및 대형 스마트폰 **********/
-@media (max-width: 575px) {
+@media (min-width: 0px) and (max-width: 464px) {
   .movie-slide-container {
     margin-top: 2rem;
   }
 
   .carousel-container {
     padding-top: 10px;
-    height: 150px;
+    height: 200px;
   }
 
   .slide-title {
@@ -137,7 +137,7 @@
 }
 
 /********** 1. 작은 태블릿 및 대형 스마트폰 **********/
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 464px) and (max-width: 1024px) {
   .movie-slide-container {
     margin-top: 2rem;
   }
@@ -159,24 +159,11 @@
   }
 }
 
-/********** 2. 태블릿 **********/
-@media (min-width: 768px) and (max-width: 991px) {
+/********** 3. 데스크탑 **********/
+@media (min-width: 1024px) and (max-width: 1500px) {
   .carousel-container {
     padding-top: 10px;
-  }
-
-  .custom-dot-list-style,
-  .carousel-container .react-multiple-carousel__arrow,
-  .carousel-container .react-multiple-carousel__arrow--left,
-  .carousel-container .react-multiple-carousel__arrow--right {
-    display: none;
-  }
-}
-
-/********** 3. 작은 노트북 및 데스크탑 **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-  .carousel-container {
-    height: 300px;
+    height: 400px;
   }
 
   .custom-dot-list-style,

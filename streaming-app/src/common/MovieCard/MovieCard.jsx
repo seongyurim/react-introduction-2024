@@ -4,25 +4,14 @@ import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
 import { getYear } from '../../utils/dateUtil';
+import { showGenre } from '../../utils/genreUtil';
 import './MovieCard.style.css';
 
 const MovieCard = ({ movie, className = '' }) => {
   const navigate = useNavigate();
   const posterUrl = `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`;
   const { data:genreData } = useMovieGenreQuery();
-  // console.log("genre:", genreData);
-
-  // 영화 장르 아이디를 문자열로 변경
-  // ex. genreIdList(movie.genre_ids): [28, 53]
-  // ex. genreData: [{id:28, name:'액션'}, {id:53, name:'드라마'}, ...]
-  const showGenre = (genreIdList) => {
-    if (!genreData) return [];
-    const genreNameList = genreIdList.map((id) => {
-      const genreObj = genreData.find((genre) => genre.id === id)
-      return genreObj.name;
-    });
-    return genreNameList;
-  }
+  // console.log("MovieCard's genre:", genreData);
 
   return (
     <div
@@ -45,7 +34,7 @@ const MovieCard = ({ movie, className = '' }) => {
         <div className='card-overlay-bottom'>
           <div className='movie-release-year'>{getYear(movie.release_date)}</div>
           <div className='genres'>
-            {showGenre(movie.genre_ids).map((id, idx) => <div key={idx} className='movie-genre'>{id}</div>)}
+            {showGenre(movie.genre_ids, genreData).map((id, idx) => <div key={idx} className='movie-genre'>{id}</div>)}
           </div>
         </div>
       </div>

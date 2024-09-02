@@ -86,15 +86,15 @@
   align-items: center;
 }
 
-.star-icon,
-.heart-icon {
+.detail-badges .star-icon,
+.detail-badges .heart-icon {
   font-size: .85rem;
   vertical-align: center;
   color: gold;
   margin-right: 6px;
 }
 
-.heart-icon {
+.detail-badges .heart-icon {
   color: rgb(252, 69, 63);
 }
 

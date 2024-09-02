@@ -141,3 +141,21 @@
 .search-input::placeholder {
   color: #e5e5e5;
 }
+
+@media (max-width: 1199px) {
+  .nav-container {
+    padding: 1rem 2rem;
+  }
+
+  .nav-container.scrolled {
+    background-color: transparent;
+    -webkit-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+    -moz-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+    -o-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+    backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+  }
+
+  .nav-list li {
+    display: none;
+  }
+}
