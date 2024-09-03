@@ -78,7 +78,7 @@ const Banner = () => {
             </button>
             <button className='basic-btn detail-btn' onClick={() => navigate(`/movies/${mainItem.id}`)}>
               <FontAwesomeIcon icon={faCircleInfo} className='btn-icon detail-btn-icon'/>
-              <span className='preview-btn-text'>상세 정보</span>
+              <span className='preview-btn-text'>상세정보</span>
             </button>
           </div>
         </div>

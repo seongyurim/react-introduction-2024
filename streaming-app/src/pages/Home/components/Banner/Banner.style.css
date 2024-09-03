@@ -14,7 +14,6 @@
 .banner-wrapper::before {
   content: '';
   background: linear-gradient(to top, #141414, transparent);
-  /* background-color: green; */
   position: absolute;
   left: 0;
   height: inherit;

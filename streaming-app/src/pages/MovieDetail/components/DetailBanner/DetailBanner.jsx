@@ -49,7 +49,9 @@ const DetailBanner = ({ movie }) => {
               </div>
             </div>
             <h1 className='detail-title'>{movie?.title}</h1>
-            <p className='detail-tagline'>{movie?.tagline}</p>
+            {(movie?.tagline) && (
+              <p className='detail-tagline'>{movie?.tagline}</p>
+            )}
             <p className='detail-overview'>
               {isExpanded ? movie?.overview : truncateText(movie?.overview)}
               {isTruncable && (

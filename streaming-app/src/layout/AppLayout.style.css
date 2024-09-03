@@ -17,8 +17,11 @@
 }
 
 .nav-container.scrolled {
-  background-image: none;
-  background-color: #141414;
+  background-color: transparent;
+  -webkit-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+  -moz-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+  -o-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+  backdrop-filter: saturate(50%) brightness(70%) blur(15px);
 }
 
 .nav-left-area {
@@ -142,17 +145,24 @@
   color: #e5e5e5;
 }
 
-@media (max-width: 1199px) {
+
+
+
+/********** 2. 태블릿 **********/
+@media (max-width: 991px) {
   .nav-container {
-    padding: 1rem 2rem;
+    padding: 1rem;
   }
 
-  .nav-container.scrolled {
-    background-color: transparent;
-    -webkit-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
-    -moz-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
-    -o-backdrop-filter: saturate(50%) brightness(70%) blur(15px);
-    backdrop-filter: saturate(50%) brightness(70%) blur(15px);
+  .nav-list li {
+    display: none;
+  }
+}
+
+/********** 3. 작은 노트북 및 데스크탑 **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-container {
+    padding: 1rem 2rem;
   }
 
   .nav-list li {
