@@ -32,11 +32,11 @@ export const genreResponsive = {
   },
   desktop: {
     breakpoint: { max: 1500, min: 1024 },
-    items: 6,
+    items: 8,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3
+    items: 4
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },

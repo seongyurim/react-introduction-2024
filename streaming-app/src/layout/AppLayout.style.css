@@ -157,6 +157,31 @@
   .nav-list li {
     display: none;
   }
+  
+  .nav-list li:nth-of-type(2) {
+    display: block;
+  }
+  
+  .nav-list li+li {
+    margin-left: 0;
+  }
+  
+  .nav-list .nav-item {
+    font-size: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .nav-icons {
+    font-size: 1.3rem;
+  }
+
+  .search-input-wrapper.active {
+    width: 250px;
+  }
 }
 
 /********** 3. 작은 노트북 및 데스크탑 **********/

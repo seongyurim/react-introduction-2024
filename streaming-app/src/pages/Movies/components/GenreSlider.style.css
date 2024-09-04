@@ -99,3 +99,45 @@
 .genre-carousel-container .react-multiple-carousel__arrow--right {
   right: 0;
 }
+
+
+
+
+/********** 2. 작은 태블릿 및 대형 스마트폰 **********/
+@media (max-width: 1024px) {
+  .genre-carousel-container {
+    padding-top: 0;
+  }
+
+  .genre-badge {
+    font-size: 1rem;
+    padding: .7rem 0;
+    border-radius: .2rem;
+  }
+
+  .genre-custom-dot-list-style,
+  .genre-carousel-container .react-multiple-carousel__arrow,
+  .genre-carousel-container .react-multiple-carousel__arrow--left,
+  .genre-carousel-container .react-multiple-carousel__arrow--right {
+    display: none;
+  }
+
+  .genre-badge:hover {
+    transform: translateY(0);
+  }
+  
+  .genre-badge.genre-active {
+    transform: translateY(0);
+  }
+}
+
+/********** 3. 데스크탑 **********/
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .genre-custom-dot-list-style,
+  .genre-carousel-container .react-multiple-carousel__arrow,
+  .genre-carousel-container .react-multiple-carousel__arrow--left,
+  .genre-carousel-container .react-multiple-carousel__arrow--right {
+    display: none;
+  }
+
+}

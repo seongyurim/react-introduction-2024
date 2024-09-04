@@ -105,3 +105,48 @@
 .page-disabled {
   color: red;
 }
+
+
+
+
+/********** 2. 태블릿 **********/
+@media (max-width: 991px) {
+  .movie-container {
+    margin: 4rem 1rem 0 1rem;
+  }
+  
+  .movie-top {
+    margin-bottom: 1rem;
+  }
+
+  .movie-top-info {
+    font-size: 1.2rem;
+    margin-bottom: .7rem;
+  }
+
+  .results-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 1rem .5rem;
+  }
+
+  .movie-card {
+    height: 200px;
+  }
+
+  .pagination {
+    margin-top: 2rem;
+  }
+}
+
+/********** 3. 작은 노트북 및 데스크탑 **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .movie-container {
+    margin: 4rem 2rem 0 2rem;
+  }
+
+  .movie-card {
+    height: 300px;
+  }
+}

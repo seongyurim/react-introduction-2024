@@ -26,7 +26,7 @@
   left: 0;
   top: 60%;
   transform: translateY(-50%);
-  line-height: 1.6;
+  line-height: 1.4;
   padding-left: 4rem;
 }
 
@@ -127,13 +127,13 @@
   }
 
   .item-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
     margin-bottom: .5rem;
   }
 
   .banner-genres {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     display: block;
     text-align: center;
   }
@@ -146,9 +146,17 @@
     flex-direction: column;
     gap: .5rem;
   }
-
+  
   .basic-btn {
-    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: .7rem;
+    border-radius: .2rem;
+  }
+
+  .banner-btns .basic-btn.detail-btn .detail-btn-icon {
+    font-size: 1rem;
+    margin-right: 7px;
   }
 }
 

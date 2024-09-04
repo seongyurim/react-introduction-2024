@@ -136,7 +136,10 @@
   }
 }
 
-/********** 1. 작은 태블릿 및 대형 스마트폰 **********/
+
+
+
+/********** 2. 작은 태블릿 및 대형 스마트폰 **********/
 @media (min-width: 464px) and (max-width: 1024px) {
   .movie-slide-container {
     margin-top: 2rem;

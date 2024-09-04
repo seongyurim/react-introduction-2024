@@ -90,8 +90,8 @@ const MoviePage = () => {
           breakLabel="..."
           nextLabel=""
           onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          marginPagesDisplayed={5}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={3}
           renderOnZeroPageCount={null}
           containerClassName="pagination" // 전체 컨테이너 css
           pageClassName="page-item" // 각 페이지 아이템(li) css
