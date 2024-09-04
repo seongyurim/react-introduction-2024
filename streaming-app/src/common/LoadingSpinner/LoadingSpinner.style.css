@@ -26,3 +26,15 @@
 .loading-msg {
   text-align: center;
 }
+
+
+@media (max-width: 991px) {
+  .loading-spinner {
+    width: 30px;
+    height: 30px;
+  }
+
+  .loading-msg {
+    display: none;
+  }
+}

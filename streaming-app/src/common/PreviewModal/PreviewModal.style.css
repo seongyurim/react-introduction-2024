@@ -17,11 +17,6 @@
   opacity: 1;
 }
 
-.modal-close-btn {
-  position: absolute;
-  font-size: 3rem;
-}
-
 .modal-video-wrapper {
   width: 60vw;
   height: 60vh;
@@ -78,4 +73,45 @@
 
 .modal-error-txt {
   font-size: 1.2rem;
+}
+
+
+
+
+/********** 1. 작은 태블릿 및 대형 스마트폰 **********/
+@media (max-width: 767px) {
+  .modal-video-wrapper {
+    width: 100vw;
+    height: 40vh;
+  }
+
+  .modal-close-btn {
+    font-size: 1.5rem;
+    right: 30px;
+    top: -40px;
+  }
+}
+
+/********** 2. 태블릿 **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .modal-video-wrapper {
+    width: 80vw;
+  }
+
+  .modal-close-btn {
+    font-size: 1.5rem;
+    right: -35px;
+  }
+}
+
+/********** 3. 작은 노트북 및 데스크탑 **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .modal-video-wrapper {
+    width: 80vw;
+  }
+
+  .modal-close-btn {
+    font-size: 2rem;
+    right: -40px;
+  }
 }

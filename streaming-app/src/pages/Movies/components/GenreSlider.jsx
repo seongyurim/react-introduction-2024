@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./GenreSlider.style.css";
-import { useNavigate } from "react-router-dom";
 
 const GenreSlider = ({ genres, responsive, selectedGenre, setSelectedGenre }) => {
   // console.log("genres:", genres);

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useSearchMediaQuery } from "../../hooks/useSearchMedia";
 import { useLocation, useSearchParams } from "react-router-dom";
 import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
 import GenreSlider from "./components/GenreSlider";
+import Footer from "../../common/Footer/Footer";
 import { genreResponsive } from "../../constants/responsive";
+import { useSearchMediaQuery } from "../../hooks/useSearchMedia";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import "./MoviePage.style.css";
-import Footer from "../../common/Footer/Footer";
 
 const MoviePage = () => {
   const [page, setPage] = useState(1);
@@ -24,10 +24,10 @@ const MoviePage = () => {
     isLoading,
     isError,
     error,
-  } = useSearchMediaQuery({ keyword, page, genre: selectedGenre?.id || genreParam });
+  } = useSearchMediaQuery({ keyword, page, genre:selectedGenre?.id || genreParam });
   // console.log("useSearchMediaQuery's searchData:", searchData);
 
-  const { data: genreData } = useMovieGenreQuery();
+  const { data:genreData } = useMovieGenreQuery();
   // console.log("useSearchMediaQuery's genreData:", genreData);
 
   // 내비게이션에 있는 장르 페이지 보여주기
