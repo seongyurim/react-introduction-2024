@@ -13,3 +13,6 @@
 [submodule "contacts"]
 	path = contacts
 	url = https://github.com/seongyurim/contacts-redux-2024.git
+[submodule "streaming-app"]
+	path = streaming-app
+	url = https://github.com/seongyurim/netflip-streaming-app-2024.git
